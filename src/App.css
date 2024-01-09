@@ -6,11 +6,14 @@ a{
 }
 
 .fullnav{
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100vw;
   height: 100vh;
+  z-index: 1000;
+  pointer-events: none;
 }
 
 .navtop{
@@ -29,4 +32,26 @@ a{
   font-size: 12px;
   margin: 0.5rem;
   font-weight: 100;
+}
+
+.gallery-container {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery-item {
+  width: 150px; /* Ajustez selon vos besoins */
+  text-align: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+}
+
+.title-float{
+  display: none;
 }
