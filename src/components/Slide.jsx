@@ -49,7 +49,7 @@ const Slide = ({ data }) => {
 
   const centerStyle = () => ({
     position: 'fixed',
-    maxWidth: '80vw',
+    maxWidth: '100vw',
     left: '50%',
     top: '40%',
     transform: 'translate(-50%, -50%)',
@@ -57,7 +57,12 @@ const Slide = ({ data }) => {
     display: selectedImage !== null ? 'flex' : 'none',
     justifyContent: 'center',
     alignItems: 'end',
-    marginTop: '5.5vh'
+    marginTop: '5.5vh',
+    '@media (max-width: 600px)': {
+      maxWidth: 'unset',
+      flexDirection: 'column',
+      alignItems: 'center',
+    }
   });
 
 

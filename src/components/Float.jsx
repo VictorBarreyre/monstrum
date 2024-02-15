@@ -107,8 +107,7 @@ const Float = ({ data }) => {
                     onTouchStart={(e) => onStart(index, e)}>
                     <img src={item.image} alt={item.title} />
                     <div className='float-texte-flex'> 
-                    <p style={getTitleStyle()} className='title-float'>{item.title}</p>
-                    <p style={getTitleStyle()} className='title-float-details'>{item.details}</p>
+                    <p style={getTitleStyle()} className='title-float'>{item.title} {item.details}</p> 
                     </div>
                 </div>
             ))}

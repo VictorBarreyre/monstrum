@@ -114,11 +114,14 @@ body {
   height:100vh
 }
 
-body {
+html, body {
   margin: 0;
-  place-items: center;
+  padding: 0;
   width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Ajoutez cela pour empêcher les barres de défilement d'apparaître */
 }
+
 
 h1 {
   font-size: 3.2em;

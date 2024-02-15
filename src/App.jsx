@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
 import data from './data.jsx';
-import Slide from './components/Slide.jsx';
 import Float from './components/Float.jsx';
 import List from './components/List.jsx';
 import Header from './components/Header.jsx';
@@ -21,7 +20,6 @@ function App() {
     setHoverlayOpen(!hoverLay)
   };
 
-
   return (
     <>
     <Header 
@@ -29,11 +27,13 @@ function App() {
       hoverLay={hoverLay}
       setActiveComponent={handleComponentChange} 
       activeComponent={activeComponent}/>  
-      <Contact hoverLay={hoverLay}/>
+      <Contact 
+      data={data} 
+      hoverLay={hoverLay}
+      />
       {activeComponent === 'List' && <List data={data} />}
       {activeComponent === 'Grid' && <Grid data={data} />}
       {activeComponent === 'Float' && <Float data={data} />}
-      {activeComponent === 'Slide' && <Slide data={data} />}
       
     </>
   );

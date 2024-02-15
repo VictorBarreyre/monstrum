@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Header = ( { openOverlayContact, activeComponent, setActiveComponent} ) => {
+const Header = ( { hoverLay,openOverlayContact, activeComponent, setActiveComponent} ) => {
   return (
     <div className='navtop'>
         <a 
-            className='topa'
+            className={`topa ${hoverLay ? 'active' : ''}`}
             onClick={openOverlayContact}>
             Jeunecrouteur
         </a>
@@ -28,12 +28,6 @@ const Header = ( { openOverlayContact, activeComponent, setActiveComponent} ) =>
                     onClick={() => setActiveComponent('Float')}
                 >
                     Float
-                </a>
-                <a
-                    className={`topa ${activeComponent === 'Slide' ? 'active' : ''}`}
-                    onClick={() => setActiveComponent('Slide')}
-                >
-                    Slide
                 </a>
                
             </div>

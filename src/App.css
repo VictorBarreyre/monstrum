@@ -49,30 +49,40 @@ a {
 .topa:hover {
   cursor: pointer;
 }
-
 .activeClassContact {
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 3.5vw;
+  padding-top: 2.5vw;
   padding-left: 0.5rem;
   display: flex;
-  height: 100vw;
-  width: 100vw;
+  flex-direction: column;
+  height: 100%;
+  width: calc(100% - (100vw - 100%)); /* Utilisation de calc() pour ajuster la largeur */
   backdrop-filter: blur(80px);
   z-index: 10;
+  overflow: auto;
 }
 
 
 .quiestil {
+  list-style: none;
   width: 45vw;
   font-size: 12px;
+  padding: 0;
 }
 
 .inactiveClassContact {
   display: none;
 }
 
+
+.flexend-contact{
+  display: flex;
+  width: 98.5vw;
+  align-items: end;
+  justify-content: space-between;
+}
 
 .grid-container {
   padding: 10px;
@@ -114,7 +124,7 @@ a {
 .gallery-item {
   display: flex;
   flex-direction: column;
-  width: 150px;
+  width: 20vw;
   /* Ajustez selon vos besoins */
   text-align: center;
 }
@@ -126,7 +136,6 @@ a {
 
 .float-texte-flex {
   display: flex;
-  width: max-content;
   align-items: center;
   justify-content: space-between;
 }
@@ -139,13 +148,6 @@ a {
 }
 
 
-.title-float-details {
-  display: flex;
-  text-align: left;
-  line-height: 1rem;
-  font-size: 12px;
-  margin-left: 1rem;
-}
 
 
 .slider-container {
@@ -396,4 +398,10 @@ a {
     /* espace entre le texte et l'image */
   }
 
+
+  .flex-slider-img{
+    width: 95vw;
+    height:unset ;
+  }
+  
 }
