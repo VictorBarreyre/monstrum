@@ -1,12 +1,121 @@
+
+@font-face {
+  font-family: 'Abordage-Regular';
+  src: url('./assets/fonts/Abordage-Regular.woff2') format('woff2'),
+    url('./assets/fonts/Abordage-Regular.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Basalte-Fond';
+  src: url('./assets/fonts/Basalte-Fond.woff2') format('woff2'),
+    url('./assets/fonts/Basalte-Fond.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Director-Bold';
+  src: url('./assets/fonts/Director-Bold.woff2') format('woff2'),
+    url('./assets/fonts/Director-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Director-Regular';
+  src: url('./assets/fonts/Director-Regular.woff2') format('woff2'),
+    url('./assets/fonts/Director-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Director-Variable';
+  src: url('./assets/fonts/Director-Variable.woff2') format('woff2'),
+    url('./assets/fonts/Director-Variable.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Director-Light';
+  src: url('./assets/fonts/Director-Light.woff2') format('woff2'),
+    url('./assets/fonts/Director-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Equateur-Regular';
+  src: url('./assets/fonts/Equateur-Regular.woff2') format('woff2'),
+    url('./assets/fonts/Equateur-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+@font-face {
+  font-family: 'Latitude-Regular';
+  src: url('./assets/fonts/Latitude-Regular.woff2') format('woff2'),
+    url('./assets/fonts/Latitude-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Sligoil-Micro';
+  src: url('./assets/fonts/Sligoil-Micro.woff2') format('woff2'),
+    url('./assets/fonts/Sligoil-Micro.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Pour Webkit (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent; /* Rendre le thumb de la scrollbar transparent */
+}
+
+/* Pour IE et Edge */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Pour Firefox */
+body {
+  scrollbar-width: none; /* Firefox */
+}
+
+
+
 :root {
-  font-family: Inter, sans-serif;
+  position: relative;
+  font-family: 'Sligoil-Micro';
   line-height: 1.5;
   font-weight: 400;
+  width: 100vw;
+  height:100vh
 }
 
 body {
   margin: 0;
-  display: flex;
   place-items: center;
   width: 100%;
 }

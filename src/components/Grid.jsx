@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react';
 
-const Grid = () => {
+
+const Grid = ({ data }) => {
+
+
   return (
-    <div>Grid</div>
-  )
+    <div className='grid-container'>
+      <div className='grid'>
+        {data.map((item, index) => (
+          <div key={index} className="grid-item" >
+            <img src={item.image} alt={item.title} />
+            <div className='flex-grid-text'> 
+            <p className='title-grid'> {item.title} {item.details}</p>
+            </div>
+          </div>
+     
+        ))}
+      </div>
+    
+    </div>
+  );
 }
 
-export default Grid
+export default Grid;

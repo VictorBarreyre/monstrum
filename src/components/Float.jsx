@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import data from '../data';
 
-const Float = () => {
+const Float = ({ data }) => {
     const [positions, setPositions] = useState({});
     const [draggingItem, setDraggingItem] = useState(null);
     const [zIndex, setZIndex] = useState({});
+    const [showTitle, setShowTitle] = useState(false);
 
     useEffect(() => {
         const initialPositions = {};
@@ -16,17 +16,23 @@ const Float = () => {
                 startX: 0,
                 startY: 0
             };
-            initialZIndex[index] = 0;
+            initialZIndex[index] = 1; // Définit un zIndex de base pour tous les éléments
         });
         setPositions(initialPositions);
         setZIndex(initialZIndex);
-    }, []);
+    }, [data]);
 
     const onStart = (item, e) => {
         const event = e.touches ? e.touches[0] : e;
-        e.preventDefault(); // Empêcher le comportement de glisser-déposer par défaut
-
         setDraggingItem(item);
+
+        const maxZIndex = Math.max(...Object.values(zIndex)) + 1;
+        setZIndex(prevZIndex => ({
+            ...prevZIndex,
+            [item]: maxZIndex
+        }));
+
+        setShowTitle(true);
 
         setPositions(prev => ({
             ...prev,
@@ -36,24 +42,20 @@ const Float = () => {
                 startY: event.clientY,
             },
         }));
-
-        setZIndex(prevZIndex => ({
-            ...prevZIndex,
-            [item]: Math.max(...Object.values(prevZIndex)) + 1
-        }));
     };
 
     const onMove = (e) => {
         if (draggingItem === null) return;
+        e.preventDefault(); // Empêcher le comportement par défaut ici
+
         const event = e.touches ? e.touches[0] : e;
 
         setPositions(prev => {
             const currentItem = prev[draggingItem];
             if (!currentItem) return prev;
 
-            // Mise à jour des positions en fonction des mouvements
-            const newX = event.clientX ;
-            const newY = event.clientY ;
+            const newX = currentItem.x + (event.clientX - currentItem.startX);
+            const newY = currentItem.y + (event.clientY - currentItem.startY);
 
             return {
                 ...prev,
@@ -61,6 +63,8 @@ const Float = () => {
                     ...currentItem,
                     x: newX,
                     y: newY,
+                    startX: event.clientX,
+                    startY: event.clientY,
                 },
             };
         });
@@ -68,32 +72,44 @@ const Float = () => {
 
     const onEnd = () => {
         setDraggingItem(null);
+        setShowTitle(false);
     };
 
     const getItemStyle = (index) => {
         const position = positions[index];
-        const zIndexValue = zIndex[index] || 0;
+        const zIndexValue = zIndex[index] || 1;
+        const opacity = draggingItem === null || draggingItem === index ? 1 : 0; // Réduit l'opacité des non-sélectionnés
         return {
             transform: `translate(${position?.x}px, ${position?.y}px)`,
             position: 'absolute',
-            zIndex: zIndexValue
+            zIndex: zIndexValue,
+            opacity: opacity, // Applique l'opacité conditionnelle
+        };
+    };
+
+    const getTitleStyle = () => {
+        return {
+            display: showTitle ? 'block' : 'none'
         };
     };
 
     return (
         <div className="gallery-container"
-             onMouseMove={onMove}
-             onMouseUp={onEnd}
-             onTouchMove={onMove}
-             onTouchEnd={onEnd}>
+            onMouseMove={onMove}
+            onMouseUp={onEnd}
+            onTouchMove={onMove}
+            onTouchEnd={onEnd}>
             {data.map((item, index) => (
                 <div key={index}
-                     style={getItemStyle(index)}
-                     className="gallery-item"
-                     onMouseDown={(e) => onStart(index, e)}
-                     onTouchStart={(e) => onStart(index, e)}>
+                    style={getItemStyle(index)}
+                    className="gallery-item"
+                    onMouseDown={(e) => onStart(index, e)}
+                    onTouchStart={(e) => onStart(index, e)}>
                     <img src={item.image} alt={item.title} />
-                    <p className='title-float'>{item.title}</p>
+                    <div className='float-texte-flex'> 
+                    <p style={getTitleStyle()} className='title-float'>{item.title}</p>
+                    <p style={getTitleStyle()} className='title-float-details'>{item.details}</p>
+                    </div>
                 </div>
             ))}
         </div>

@@ -1,38 +1,107 @@
-
-
-a{
+a {
   color: black;
-  
+
 }
 
-.fullnav{
-  position: fixed;
+
+.fullnav {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100vw;
   height: 100vh;
-  z-index: 1000;
-  pointer-events: none;
 }
 
-.navtop{
+
+.active {
+  text-decoration: underline;
+}
+
+.navtop {
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
+  z-index: 100;
 }
-.navbottom{
+
+.navbottom {
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
+  bottom: 0px;
 }
 
-.topa{
+.leftflexbottom {
+  margin-right: 2px;
+}
+
+.topa {
   font-size: 12px;
   margin: 0.5rem;
   font-weight: 100;
 }
+
+.topa:hover {
+  cursor: pointer;
+}
+
+.activeClassContact {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 3.5vw;
+  padding-left: 0.5rem;
+  display: flex;
+  height: 100vw;
+  width: 100vw;
+  backdrop-filter: blur(80px);
+  z-index: 10;
+}
+
+
+.quiestil {
+  width: 45vw;
+  font-size: 12px;
+}
+
+.inactiveClassContact {
+  display: none;
+}
+
+
+.grid-container {
+  padding: 10px;
+  margin-top: 25px;
+}
+
+.grid {
+  column-count: 4;
+  column-gap: 20px;
+}
+
+.grid-item {
+  break-inside: avoid;
+  margin-bottom: 20px;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+}
+
+
+.title-grid {
+  font-size: 12px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+
 
 .gallery-container {
   position: fixed;
@@ -43,15 +112,288 @@ a{
 }
 
 .gallery-item {
-  width: 150px; /* Ajustez selon vos besoins */
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  /* Ajustez selon vos besoins */
   text-align: center;
 }
 
 .gallery-item img {
-  width: 100%;
+  width: 20vw;
   height: auto;
 }
 
-.title-float{
+.float-texte-flex {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-float {
+  display: flex;
+  text-align: left;
+  line-height: 1rem;
+  font-size: 12px;
+}
+
+
+.title-float-details {
+  display: flex;
+  text-align: left;
+  line-height: 1rem;
+  font-size: 12px;
+  margin-left: 1rem;
+}
+
+
+.slider-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh
+}
+
+
+.slider {
+  display: flex;
+  position: absolute;
+  bottom: 0vh;
+  margin-left: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 100vw;
+}
+
+
+.slider::-webkit-scrollbar {
   display: none;
+  /* Masquer la scrollbar sur Webkit */
+}
+
+.slide-item {
+  display: flex;
+  flex-direction: column;
+  padding-right: 0.5rem;
+
+}
+
+.slide-img {
+  height: 4vw;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.slide-img:hover {
+  opacity: 0%;
+}
+
+.slide-details {
+  margin-bottom: 0vh;
+  font-size: 12px;
+  margin-top: 1vh;
+}
+
+.title-slide {
+  margin-bottom: 0vh;
+  margin-left: 1vh;
+  color: #000;
+}
+
+.selectedtitleslide {
+  font-size: 26px;
+}
+
+.flex-slider-img {
+  height: 85vh;
+}
+
+.center-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.enlarged-image-container {
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s;
+}
+
+.image-poping {
+  opacity: 100%;
+  width: 28vw;
+}
+
+.container-flex-list-item {
+  display: flex;
+  height: fit-content;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+}
+
+.slide-title {
+  margin-top: 0vw;
+  display: none;
+}
+
+.flex-list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40vh;
+
+}
+
+.list-item {
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  height: 7vh;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.title-part {
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  /* Rend le texte transparent pour montrer uniquement l'image */
+  -webkit-background-clip: text;
+  /* Clippe l'arrière-plan avec le texte */
+  background-clip: text;
+}
+
+.title-part2 {
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  /* Rend le texte transparent pour montrer uniquement l'image */
+  -webkit-background-clip: text;
+  /* Clippe l'arrière-plan avec le texte */
+  background-clip: text;
+}
+
+.title-part:hover {
+  background-image: none;
+}
+
+.list-img {
+  margin: 0 10px;
+  /* espace entre le texte et l'image */
+  width: 15vw;
+  z-index: 1000;
+  opacity: 0;
+  filter: blur(5px);
+  /* Commencez avec un flou important */
+  transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+
+}
+
+.list-img.visible {
+  opacity: 1;
+  /* Rend l'image complètement visible */
+  filter: blur(0);
+}
+
+
+
+@media (max-width: 1200px) {
+  .grid {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 800px) {
+  .grid {
+    column-count: 2;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .container-flex-list-item {
+    padding-top: 10vh;
+    padding-bottom: 0vh;
+  }
+
+  .flex-list-item {
+    padding-bottom: 10vh;
+  }
+
+
+  .gallery-item img {
+    width: 35vw;
+    height: auto;
+  }
+
+  .flex-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flex-left {
+    align-items: center;
+    padding-left: 0;
+    width: 95.5vw;
+  }
+
+  .flex-right {
+    margin-top: 0;
+    align-items: center;
+    padding-right: 0;
+    width: 95.5vw;
+    margin-bottom: 3rem;
+  }
+
+  .grid {
+    column-count: 1;
+  }
+
+  .grid-item-right {
+    flex-direction: column;
+  }
+
+  .grid-img {
+    width: 95.5vw;
+  }
+
+  .grid-item-left {
+    margin-bottom: 1rem;
+  }
+
+  .grid-item-right {
+    margin-bottom: 1rem;
+  }
+
+  .title-grid-left {
+    width: 95vw;
+  }
+
+  .list-item {
+    font-size: 28px;
+    display: flex;
+    height: fit-content;
+  }
+
+  .title-part2 {
+    display: none;
+  }
+
+  .list-img {
+    width: 35vw;
+    margin: 0px;
+    /* espace entre le texte et l'image */
+  }
+
 }
