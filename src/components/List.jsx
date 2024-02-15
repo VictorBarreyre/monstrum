@@ -30,8 +30,8 @@ const List = ({ data }) => {
 
 
   return (
-    <div className='container-flex-list-item' style={{ cursor: 'none' }}> 
-      <div className='flex-list-item'> 
+    <div className='container-flex-list-item' > 
+      <div className='flex-list-item' style={{ cursor: 'none' }}> 
         {data.map((item, index) => {
             const titleStyle = hoveredImage === item.image ? 
             { color: 'black', 

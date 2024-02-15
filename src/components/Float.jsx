@@ -42,6 +42,10 @@ const Float = ({ data }) => {
                 startY: event.clientY,
             },
         }));
+
+        return{ 
+            cursor:'none'
+        }    
     };
 
     const onMove = (e) => {
@@ -65,6 +69,7 @@ const Float = ({ data }) => {
                     y: newY,
                     startX: event.clientX,
                     startY: event.clientY,
+                    cursor:'none'
                 },
             };
         });
@@ -80,6 +85,7 @@ const Float = ({ data }) => {
         const zIndexValue = zIndex[index] || 1;
         const opacity = draggingItem === null || draggingItem === index ? 1 : 0; // Réduit l'opacité des non-sélectionnés
         return {
+            cursor: draggingItem !== null ? 'none' : 'auto',
             transform: `translate(${position?.x}px, ${position?.y}px)`,
             position: 'absolute',
             zIndex: zIndexValue,

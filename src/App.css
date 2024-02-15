@@ -49,6 +49,7 @@ a {
 .topa:hover {
   cursor: pointer;
 }
+
 .activeClassContact {
   position: fixed;
   top: 0;
@@ -64,17 +65,42 @@ a {
   overflow: auto;
 }
 
+.single-container-contact{
+  margin-bottom:1.4rem;
+}
+
+.copyright{
+  position: fixed;
+  right: 1rem;
+  bottom: 2rem;
+}
+
 
 .quiestil {
   list-style: none;
   width: 45vw;
   font-size: 12px;
   padding: 0;
+  margin: 0;
+}
+
+.quiestil li {
+  width: fit-content;
 }
 
 .inactiveClassContact {
   display: none;
 }
+
+.mouse-overlay {
+  cursor:'none';
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  transform: translate(50%, -60%);
+  width: 200px;
+}
+
 
 
 .flexend-contact{
@@ -257,10 +283,10 @@ a {
 }
 
 .list-item {
-  font-size: 26px;
+  font-size: 22px;
   display: flex;
   align-items: center;
-  height: 7vh;
+  height: 6vh;
   padding-left: 2rem;
   padding-right: 2rem;
 }
