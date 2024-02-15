@@ -409,7 +409,7 @@ a {
   }
 
   .list-item {
-    font-size: 28px;
+    font-size: 20px;
     display: flex;
     height: fit-content;
   }
@@ -424,10 +424,25 @@ a {
     /* espace entre le texte et l'image */
   }
 
+  .gallery-item{
+    width: 35vw;
+  }
+
 
   .flex-slider-img{
     width: 95vw;
     height:unset ;
+  }
+
+  .activeClassContact {
+    justify-content: end;
+    padding-top: 10vw;
+    padding-left: 0.6rem;
+
+  }
+
+  .quiestil{
+    width: 95vw;
   }
   
 }
