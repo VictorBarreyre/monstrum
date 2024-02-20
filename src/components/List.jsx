@@ -48,7 +48,7 @@ const List = ({ data }) => {
             ? {
               color: 'black',
               backgroundImage: 'none',
-              fontSize: isMobile ? '22px' : '32px',
+              fontSize: isMobile ? '20px' : '32px',
               marginBottom: isMobile ? '0vh' : '10vh',
               marginTop: isMobile ? '0vh' : '10vh',
             }
