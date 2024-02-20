@@ -108,6 +108,7 @@ a {
   width: 98.5vw;
   align-items: end;
   justify-content: space-between;
+  margin-bottom: 7vh;
 }
 
 .grid-container {
@@ -349,6 +350,12 @@ a {
 
 
 @media only screen and (max-width: 600px) {
+
+  .copyright{
+    position: fixed;
+    right: 1rem;
+    bottom: 2rem;
+  }
 
   .container-flex-list-item {
     padding-top: 10vh;

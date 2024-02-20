@@ -48,7 +48,7 @@ const Contact = ({ hoverLay, data }) => {
 
       <div className='flexend-contact'>
         <p className='quiestil'>
-          Credit :<br />
+          Credits :<br />
           Designed & Developed by Victor Barreyre
         </p>
         <p className='copyright'>©</p>
